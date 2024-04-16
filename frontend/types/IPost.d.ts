@@ -11,11 +11,12 @@ export interface IPost {
                 text: string;
             }[];
         }[];
-        author: string;
         createdAt: string;
         updatedAt: string;
         publishedAt: string;
         slug: string;
+        date: string;
+        isFeatured: boolean;
         image: {
             data: {
                 id: number;
@@ -44,5 +45,31 @@ export interface IPost {
                 };
             };
         };
+        categories: {
+            data: {
+                id: number;
+                attributes: {
+                    name: string;
+                    slug: string;
+                    createdAt: string;
+                    updatedAt: string;
+                    publishedAt: string;
+                }
+            }
+        },
+        author: {
+            data: {
+                id: number;
+                attributes: {
+                    username: string;
+                    email: string;
+                    provider: string;
+                    confirmed: boolean;
+                    blocked: boolean;
+                    createdAt: string;
+                    updatedAt: string;
+                }
+            }
+        }
     };
 }

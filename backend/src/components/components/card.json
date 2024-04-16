@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_components_cards",
+  "info": {
+    "displayName": "Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.page-link"
+    },
+    "bgColor": {
+      "type": "enumeration",
+      "enum": [
+        "Light Blue",
+        "Dark Blue",
+        "Darkest Blue"
+      ],
+      "default": "Darkest Blue"
+    }
+  }
+}

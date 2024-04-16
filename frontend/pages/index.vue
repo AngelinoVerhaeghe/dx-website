@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { LightBulbIcon, RocketLaunchIcon, AdjustmentsVerticalIcon } from '@heroicons/vue/24/outline';
 
-const items = [];
 const features = [
     {
         name: 'Think',
