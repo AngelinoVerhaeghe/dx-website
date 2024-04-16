@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_components_image_texts",
+  "info": {
+    "displayName": "Image-Text"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

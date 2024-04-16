@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig( {
-    ssr: true,
+    ssr: false,
     runtimeConfig: {
         public: {
             strapiUrl: "http://localhost:1337",
