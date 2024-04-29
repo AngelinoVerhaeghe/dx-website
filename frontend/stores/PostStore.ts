@@ -49,7 +49,6 @@ export const usePostStore = defineStore( {
                         }
                     }
                 }) );
-                console.log( 'Posts fetched:', this.posts );
             } catch (error) {
                 console.error( 'Error fetching posts:', error );
             } finally {

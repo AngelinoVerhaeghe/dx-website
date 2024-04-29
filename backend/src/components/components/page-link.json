@@ -10,7 +10,7 @@
       "type": "string",
       "required": true
     },
-    "href": {
+    "url": {
       "type": "string",
       "required": true
     },

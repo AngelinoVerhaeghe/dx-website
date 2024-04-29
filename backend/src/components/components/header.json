@@ -17,6 +17,21 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "feature_1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.card"
+    },
+    "feature_2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.card"
+    },
+    "feature_3": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.card"
     }
   }
 }

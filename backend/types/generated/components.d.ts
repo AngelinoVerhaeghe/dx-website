@@ -10,12 +10,18 @@ export interface ComponentsCard extends Schema.Component {
     title: Attribute.String;
     subTitle: Attribute.String;
     label: Attribute.String & Attribute.Required;
-    href: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
     links: Attribute.Component<'components.page-link', true>;
     bgColor: Attribute.Enumeration<
-      ['Light Blue', 'Dark Blue', 'Darkest Blue']
+      ['bg-dx-blue-light', 'bg-dx-blue-dark', 'bg-dx-blue-darkest']
     > &
-      Attribute.DefaultTo<'Darkest Blue'>;
+      Attribute.DefaultTo<'bg-dx-blue-darkest'>;
+    icon: Attribute.Text &
+      Attribute.CustomField<'plugin::heroicons-field.icon-picker'>;
+    textColor: Attribute.Enumeration<
+      ['text-dx-blue-light', 'text-dx-blue-dark', 'text-dx-blue-darkest']
+    > &
+      Attribute.DefaultTo<'text-dx-blue-darkest'>;
   };
 }
 
@@ -40,6 +46,9 @@ export interface ComponentsHeader extends Schema.Component {
     title: Attribute.String;
     subTitle: Attribute.String;
     headerImage: Attribute.Media;
+    feature_1: Attribute.Component<'components.card'>;
+    feature_2: Attribute.Component<'components.card'>;
+    feature_3: Attribute.Component<'components.card'>;
   };
 }
 
@@ -62,7 +71,7 @@ export interface ComponentsPageLink extends Schema.Component {
   };
   attributes: {
     label: Attribute.String & Attribute.Required;
-    href: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
     target: Attribute.Enumeration<['_blank', '_self', '_parent', '_top']> &
       Attribute.DefaultTo<'_self'>;
   };
@@ -78,6 +87,56 @@ export interface ComponentsTitle extends Schema.Component {
   };
 }
 
+export interface MenuDropdown extends Schema.Component {
+  collectionName: 'components_menu_dropdowns';
+  info: {
+    displayName: 'Dropdown';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String;
+    icon: Attribute.Media;
+    link: Attribute.Component<'menu.link', true>;
+    url: Attribute.String;
+  };
+}
+
+export interface MenuLink extends Schema.Component {
+  collectionName: 'components_menu_links';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    label: Attribute.String;
+    url: Attribute.String;
+    description: Attribute.Text;
+    icon: Attribute.Media;
+  };
+}
+
+export interface MenuMenuButton extends Schema.Component {
+  collectionName: 'components_menu_menu_buttons';
+  info: {
+    displayName: 'MenuButton';
+  };
+  attributes: {
+    label: Attribute.String;
+    url: Attribute.String;
+    type: Attribute.Enumeration<['dark', 'darkest', 'light']>;
+  };
+}
+
+export interface MenuMenuLink extends Schema.Component {
+  collectionName: 'components_menu_menu_links';
+  info: {
+    displayName: 'MenuLink';
+  };
+  attributes: {
+    label: Attribute.String;
+    url: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -87,6 +146,10 @@ declare module '@strapi/types' {
       'components.image-text': ComponentsImageText;
       'components.page-link': ComponentsPageLink;
       'components.title': ComponentsTitle;
+      'menu.dropdown': MenuDropdown;
+      'menu.link': MenuLink;
+      'menu.menu-button': MenuMenuButton;
+      'menu.menu-link': MenuMenuLink;
     }
   }
 }

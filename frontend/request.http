@@ -1,0 +1,5 @@
+### Get all articles with all data populated
+GET http://localhost:1337/api/articles?populate=*
+
+### Get home page data
+GET http://localhost:1337/api/home-page?populate[PageContent][populate][headerImage][fields][0]=url&populate[PageContent][populate][headerImage][fields][1]=alternativeText&populate[PageContent][populate][feature_1][populate][0]=links

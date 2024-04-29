@@ -461,14 +461,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
   attributes: {
     PageContent: Attribute.DynamicZone<
-      [
-        'components.card',
-        'components.features',
-        'components.header',
-        'components.page-link',
-        'components.title',
-        'components.image-text'
-      ]
+      ['components.features', 'components.header', 'components.image-text']
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -481,6 +474,38 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMainMenuMainMenu extends Schema.SingleType {
+  collectionName: 'main_menus';
+  info: {
+    singularName: 'main-menu';
+    pluralName: 'main-menus';
+    displayName: 'MainMenu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    MainMenuItems: Attribute.DynamicZone<
+      ['menu.dropdown', 'menu.menu-link', 'menu.menu-button']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::main-menu.main-menu',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::main-menu.main-menu',
       'oneToOne',
       'admin::user'
     > &
@@ -932,6 +957,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::category.category': ApiCategoryCategory;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::main-menu.main-menu': ApiMainMenuMainMenu;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
