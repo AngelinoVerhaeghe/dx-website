@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_menu_menu_buttons",
+  "info": {
+    "displayName": "MenuButton"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "dark",
+        "darkest",
+        "light"
+      ]
+    }
+  }
+}

@@ -15,7 +15,6 @@ const fetchPosts = async () => {
     try {
         await postsStore.fetchPosts();
         posts.value = postsStore.posts;
-        console.log('posts', posts.value)
     } catch (err) {
         console.error('Error fetching posts:', err);
         error.value = err instanceof Error ? err : new Error('An error occurred while fetching posts');

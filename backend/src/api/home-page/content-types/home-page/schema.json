@@ -15,11 +15,8 @@
     "PageContent": {
       "type": "dynamiczone",
       "components": [
-        "components.card",
         "components.features",
         "components.header",
-        "components.page-link",
-        "components.title",
         "components.image-text"
       ]
     }

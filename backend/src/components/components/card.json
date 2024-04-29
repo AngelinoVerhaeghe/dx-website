@@ -16,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "href": {
+    "url": {
       "type": "string",
       "required": true
     },
@@ -28,11 +28,24 @@
     "bgColor": {
       "type": "enumeration",
       "enum": [
-        "Light Blue",
-        "Dark Blue",
-        "Darkest Blue"
+        "bg-dx-blue-light",
+        "bg-dx-blue-dark",
+        "bg-dx-blue-darkest"
       ],
-      "default": "Darkest Blue"
+      "default": "bg-dx-blue-darkest"
+    },
+    "icon": {
+      "type": "customField",
+      "customField": "plugin::heroicons-field.icon-picker"
+    },
+    "textColor": {
+      "type": "enumeration",
+      "enum": [
+        "text-dx-blue-light",
+        "text-dx-blue-dark",
+        "text-dx-blue-darkest"
+      ],
+      "default": "text-dx-blue-darkest"
     }
   }
 }
